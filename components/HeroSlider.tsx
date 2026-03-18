@@ -6,9 +6,8 @@ import type { SlideImage } from "@/types";
 
 // Placeholder slides (Firestoreからデータ取得後に差し替え)
 const placeholderSlides: SlideImage[] = [
-  { id: "1", url: "/images/placeholder-salon.svg", alt: "店内画像", order: 0, createdAt: new Date() },
-  { id: "2", url: "/images/placeholder-style.svg", alt: "スタイル写真", order: 1, createdAt: new Date() },
-  { id: "3", url: "/images/placeholder-school.svg", alt: "スクール写真", order: 2, createdAt: new Date() },
+  { id: "1", url: "/mv/mv.png", alt: "メインビジュアル", order: 0, createdAt: new Date() },
+  { id: "2", url: "/mv/mv2.png", alt: "メインビジュアル2", order: 1, createdAt: new Date() },
 ];
 
 type Props = {

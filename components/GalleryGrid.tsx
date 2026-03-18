@@ -1,15 +1,25 @@
 import Image from "next/image";
 import type { GalleryImage } from "@/types";
 
-const placeholderImages = (category: string): GalleryImage[] =>
-  Array.from({ length: 5 }, (_, i) => ({
-    id: `${category}-${i}`,
-    url: `/images/placeholder-${category}.svg`,
-    alt: `${category === "hair" ? "ヘアスタイル" : "着付け"}サンプル${i + 1}`,
-    category: category as "hair" | "kitsuke",
-    order: i,
-    createdAt: new Date(),
-  }));
+const hairImages: GalleryImage[] = [
+  { id: "hair-0", url: "/catalog/catalog1.png", alt: "ヘアスタイル1", category: "hair", order: 0, createdAt: new Date() },
+  { id: "hair-1", url: "/catalog/catalog2.png", alt: "ヘアスタイル2", category: "hair", order: 1, createdAt: new Date() },
+  { id: "hair-2", url: "/catalog/catalog3.png", alt: "ヘアスタイル3", category: "hair", order: 2, createdAt: new Date() },
+  { id: "hair-3", url: "/catalog/catalog4.png", alt: "ヘアスタイル4", category: "hair", order: 3, createdAt: new Date() },
+];
+
+const kitsukeImages: GalleryImage[] = [
+  { id: "kitsuke-0", url: "/kitsuke/kitsuke1.png", alt: "着付け1", category: "kitsuke", order: 0, createdAt: new Date() },
+  { id: "kitsuke-1", url: "/kitsuke/kitsuke2.png", alt: "着付け2", category: "kitsuke", order: 1, createdAt: new Date() },
+  { id: "kitsuke-2", url: "/kitsuke/kitsuke3.png", alt: "着付け3", category: "kitsuke", order: 2, createdAt: new Date() },
+  { id: "kitsuke-3", url: "/kitsuke/kitsuke4.png", alt: "着付け4", category: "kitsuke", order: 3, createdAt: new Date() },
+];
+
+const placeholderImages = (category: string): GalleryImage[] => {
+  if (category === "hair") return hairImages;
+  if (category === "kitsuke") return kitsukeImages;
+  return [];
+};
 
 type Props = {
   title: string;

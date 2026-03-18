@@ -10,7 +10,7 @@ export default function Home() {
 
       {/* Catchcopy */}
       <section className="max-w-2xl mx-auto px-4 py-16 text-center">
-        <h1 className="text-xl sm:text-2xl font-medium mb-6 leading-relaxed tracking-wide">
+        <h1 className="text-xl sm:text-2xl font-bold mb-6 leading-relaxed tracking-wide">
           立川で評判のヘアセットサロン！
         </h1>
         <p className="text-sm sm:text-base text-gray-600 leading-loose mb-2">
@@ -37,7 +37,7 @@ export default function Home() {
           rel="noopener noreferrer"
           className="group inline-flex flex-col items-center gap-2 hover:opacity-70 transition-opacity"
         >
-          <span className="text-sm text-gray-500 tracking-wide">ホットペッパーでもっとお得に♡</span>
+          <span className="text-sm text-pink-300 tracking-wide">ホットペッパーでもっとお得に♡</span>
           <span className="text-xs text-gray-400 underline underline-offset-2">
             ホットペッパービューティーで予約する →
           </span>
@@ -45,15 +45,6 @@ export default function Home() {
       </section>
 
       <hr className="border-gray-200 max-w-6xl mx-auto px-4" />
-
-      {/* Gallery / Catalog */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-xs tracking-widest text-gray-400 mb-10 uppercase text-center">
-          Catalog &amp; Gallery
-        </h2>
-        <GalleryGrid title="Hair" category="hair" />
-        <GalleryGrid title="着付け" category="kitsuke" />
-      </section>
 
       {/* Menu Preview */}
       <section className="bg-gray-50 py-16">
@@ -103,6 +94,51 @@ export default function Home() {
               <span className="text-xs tracking-widest group-hover:underline">詳しく見る →</span>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Gallery / Catalog */}
+      <section className="max-w-6xl mx-auto px-4 py-16">
+        <h2 className="text-xs tracking-widest text-gray-400 mb-10 uppercase text-center">
+          Catalog &amp; Gallery
+        </h2>
+        <GalleryGrid title="Hair" category="hair" />
+        <GalleryGrid title="着付け" category="kitsuke" />
+      </section>
+
+      <hr className="border-gray-200 max-w-6xl mx-auto px-4" />
+
+      {/* Shop Info */}
+      <section className="max-w-3xl mx-auto px-4 py-16">
+        <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase text-center">Shop Info</p>
+        <h2 className="text-xl font-medium mb-12 tracking-wide text-center">店舗情報</h2>
+        <table className="w-full text-sm">
+          <tbody className="divide-y divide-gray-100">
+            {[
+              { label: "サロン名", value: "Studio Color（スタジオカラー）" },
+              { label: "Address", value: "東京都立川市錦町2-1-26 Nビルディング401" },
+              { label: "TEL", value: "042-595-8087" },
+              { label: "OPEN", value: "10:00〜23:00" },
+              { label: "定休日", value: "年始のみ" },
+            ].map(({ label, value }) => (
+              <tr key={label}>
+                <th className="py-4 pr-6 text-left text-xs tracking-wider text-gray-400 font-normal w-32 align-top">
+                  {label}
+                </th>
+                <td className="py-4 text-gray-700">{value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div className="mt-8 text-center">
+          <a
+            href="https://maps.google.com/?q=東京都立川市錦町2-1-26+Nビルディング401"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-black px-8 py-3 text-sm tracking-widest hover:bg-black hover:text-white transition-colors"
+          >
+            Google Mapで詳しく見る →
+          </a>
         </div>
       </section>
     </>

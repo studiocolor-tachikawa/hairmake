@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const siteLinks = [
   { label: "Hairmake Price", href: "/hairmake-price" },
@@ -16,14 +17,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Logo & Info */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center">
-                <span className="text-xs font-bold">Color</span>
-              </div>
-              <div>
-                <p className="text-xs text-gray-400">東京都立川市 ヘアセット＆フォト</p>
-                <p className="text-sm font-medium tracking-widest">Studio color</p>
-              </div>
+            <div className="mb-4">
+              <Image src="/logo/logo.png" alt="Studio color" width={120} height={40} className="h-10 w-auto brightness-0 invert" />
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
               立川で評判のヘアセットサロン。<br />
