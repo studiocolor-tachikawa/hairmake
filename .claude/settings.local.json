@@ -4,7 +4,8 @@
       "Bash(command -v nvm)",
       "Bash(nvm ls:*)",
       "Bash(nodebrew install-binary:*)",
-      "Bash(nodebrew use:*)"
+      "Bash(nodebrew use:*)",
+      "Bash(npm install:*)"
     ]
   }
 }
