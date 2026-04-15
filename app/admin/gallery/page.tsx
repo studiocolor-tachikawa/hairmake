@@ -35,9 +35,7 @@ export default function AdminGalleryPage() {
         >
           + 画像を追加
         </button>
-        <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={() => {
-          alert("実装後: Firebaseにアップロードします");
-        }} />
+        <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={() => {}} />
       </div>
 
       {/* Tabs */}

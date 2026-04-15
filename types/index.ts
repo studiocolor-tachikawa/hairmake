@@ -25,12 +25,3 @@ export type MenuItem = {
   order: number;
 };
 
-export type BlogPost = {
-  id: string;
-  title: string;
-  content: string;
-  thumbnail?: string;
-  published: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-};

@@ -3,8 +3,12 @@ import HeroSlider from "@/components/HeroSlider";
 import GalleryGrid from "@/components/GalleryGrid";
 import ScrollReveal from "@/components/ScrollReveal";
 import Link from "next/link";
+import { getBlogList } from "@/lib/microcms";
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const { contents: posts } = await getBlogList(3);
   return (
     <>
       {/* Hero Slider */}
@@ -130,23 +134,42 @@ export default function Home() {
           <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase text-center">Blog</p>
           <h2 className="text-xl font-medium mb-10 tracking-wide text-center">ブログ</h2>
         </ScrollReveal>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10">
-          {[
-            { id: "1", title: "ヘアセットのコツ〜普段使いに♡", date: "2026.03.01", thumbnail: "/images/placeholder-hair.svg" },
-            { id: "2", title: "成人式ヘアセット事例まとめ", date: "2026.02.15", thumbnail: "/images/placeholder-hair.svg" },
-            { id: "3", title: "春のトレンドスタイルご紹介", date: "2026.02.01", thumbnail: "/images/placeholder-hair.svg" },
-          ].map((post, i) => (
-            <ScrollReveal key={post.id} delay={i * 0.1}>
-              <Link href={`/blog/${post.id}`} className="group block">
-                <div className="relative w-full aspect-square overflow-hidden bg-gray-100 mb-3">
-                  <Image src={post.thumbnail} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-300" />
-                </div>
-                <p className="text-xs text-gray-400 mb-1">{post.date}</p>
-                <p className="text-sm leading-relaxed group-hover:opacity-60 transition-opacity">{post.title}</p>
-              </Link>
-            </ScrollReveal>
-          ))}
-        </div>
+        {posts.length === 0 ? (
+          <p className="text-sm text-gray-400 text-center mb-10">記事がまだありません</p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10">
+            {posts.map((post, i) => (
+              <ScrollReveal key={post.id} delay={i * 0.1}>
+                <Link href={`/blog/${post.id}`} className="group block">
+                  <div className="relative w-full aspect-square overflow-hidden bg-gray-100 mb-3">
+                    {post.eyecatch ? (
+                      <Image
+                        src={post.eyecatch.url}
+                        alt={post.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-gray-300 text-xs">
+                        No Image
+                      </div>
+                    )}
+                  </div>
+                  <p className="text-xs text-gray-400 mb-1">
+                    {new Date(post.publishedAt).toLocaleDateString("ja-JP", {
+                      year: "numeric",
+                      month: "2-digit",
+                      day: "2-digit",
+                    })}
+                  </p>
+                  <p className="text-sm leading-relaxed group-hover:opacity-60 transition-opacity">
+                    {post.title}
+                  </p>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        )}
         <ScrollReveal>
           <div className="text-center">
             <Link href="/blog" className="inline-flex items-center gap-2 border border-black px-8 py-3 text-sm tracking-widest hover:bg-black hover:text-white transition-colors">

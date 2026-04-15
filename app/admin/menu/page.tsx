@@ -33,13 +33,11 @@ export default function AdminMenuPage() {
     };
     setItems((prev) => [...prev, newItem]);
     setForm({ name: "", price: "" });
-    // TODO: Firestoreに保存
   };
 
   const handleDelete = (id: string) => {
     if (!confirm("削除しますか？")) return;
     setItems((prev) => prev.filter((item) => item.id !== id));
-    // TODO: Firestoreから削除
   };
 
   return (

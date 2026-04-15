@@ -17,7 +17,6 @@ export default function AdminSlidesPage() {
   const handleDelete = (id: string) => {
     if (!confirm("削除しますか？")) return;
     setSlides((prev) => prev.filter((s) => s.id !== id));
-    // TODO: Firestoreから削除 + Storageから画像削除
   };
 
   return (
@@ -33,10 +32,7 @@ export default function AdminSlidesPage() {
         >
           + 画像を追加
         </button>
-        <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={() => {
-          // TODO: Storageにアップロード → Firestoreに保存
-          alert("実装後: Firebaseにアップロードします");
-        }} />
+        <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={() => {}} />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
