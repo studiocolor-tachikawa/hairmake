@@ -2,6 +2,8 @@ import Image from "next/image";
 import HeroSlider from "@/components/HeroSlider";
 import GalleryGrid from "@/components/GalleryGrid";
 import ScrollReveal from "@/components/ScrollReveal";
+import LetterReveal from "@/components/LetterReveal";
+import LineReveal from "@/components/LineReveal";
 import Link from "next/link";
 import {
   getBlogList,
@@ -43,7 +45,7 @@ export default async function Home() {
         </section>
       </ScrollReveal>
 
-      <hr className="border-gray-200 max-w-6xl mx-auto px-4" />
+      <LineReveal className="px-4" />
 
       {/* Hot Pepper Banner */}
       <ScrollReveal>
@@ -64,16 +66,16 @@ export default async function Home() {
         </section>
       </ScrollReveal>
 
-      <hr className="border-gray-200 max-w-6xl mx-auto px-4" />
+      <LineReveal className="px-4" />
 
       {/* Menu Preview */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <ScrollReveal>
-            <h2 className="text-xs tracking-widest text-gray-400 mb-12 uppercase text-center">
-              Menu
-            </h2>
-          </ScrollReveal>
+          <LetterReveal
+            text="Menu"
+            tag="h2"
+            className="text-xs tracking-widest text-gray-400 mb-12 uppercase text-center"
+          />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Hairmake Price */}
             <ScrollReveal delay={0}>
@@ -148,22 +150,25 @@ export default async function Home() {
       {/* Gallery / Catalog */}
       <ScrollReveal>
         <section className="max-w-6xl mx-auto px-4 py-16">
-          <h2 className="text-xs tracking-widest text-gray-400 mb-10 uppercase text-center">
-            Catalog &amp; Gallery
-          </h2>
+          <LetterReveal
+            text="Catalog & Gallery"
+            tag="h2"
+            className="text-xs tracking-widest text-gray-400 mb-10 uppercase text-center"
+          />
           <GalleryGrid title="Hair" images={hairGalleryImages} />
           <GalleryGrid title="着付け" images={kitsukeGalleryImages} />
         </section>
       </ScrollReveal>
 
-      <hr className="border-gray-200 max-w-6xl mx-auto px-4" />
+      <LineReveal className="px-4" />
 
       {/* Blog */}
       <section className="max-w-4xl mx-auto px-4 py-16">
+        <LetterReveal
+          text="Blog"
+          className="text-xs tracking-widest text-gray-400 mb-2 uppercase text-center"
+        />
         <ScrollReveal>
-          <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase text-center">
-            Blog
-          </p>
           <h2 className="text-xl font-medium mb-10 tracking-wide text-center">
             ブログ
           </h2>
@@ -218,14 +223,15 @@ export default async function Home() {
         </ScrollReveal>
       </section>
 
-      <hr className="border-gray-200 max-w-6xl mx-auto px-4" />
+      <LineReveal className="px-4" />
 
       {/* Shop Info */}
       <ScrollReveal>
         <section className="max-w-3xl mx-auto px-4 py-16">
-          <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase text-center">
-            Shop Info
-          </p>
+          <LetterReveal
+            text="Shop Info"
+            className="text-xs tracking-widest text-gray-400 mb-2 uppercase text-center"
+          />
           <h2 className="text-xl font-medium mb-12 tracking-wide text-center">
             店舗情報
           </h2>
