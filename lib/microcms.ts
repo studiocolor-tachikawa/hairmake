@@ -21,6 +21,22 @@ export type Blog = {
   revisedAt: string;
 };
 
+type HairStyle = {
+  id: string;
+  title?: string;
+  image?: MicroCMSImage;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+};
+
+export type GalleryImageItem = {
+  id: string;
+  url: string;
+  alt: string;
+};
+
 const emptyList: MicroCMSListResponse<Blog> = {
   contents: [],
   totalCount: 0,
@@ -45,4 +61,63 @@ export async function getBlogDetail(id: string): Promise<Blog | null> {
     endpoint: "blogs",
     contentId: id,
   });
+}
+
+export async function getHairGalleryList(limit = 20): Promise<GalleryImageItem[]> {
+  if (!client) return [];
+  try {
+    const res = await client.getList<HairStyle>({
+      endpoint: "hairstyle",
+      queries: {
+        limit,
+        orders: "-publishedAt",
+      },
+    });
+    return res.contents
+      .map((item) => {
+        if (!item.image?.url) return null;
+        return {
+          id: item.id,
+          url: item.image.url,
+          alt: "ヘアスタイル",
+        };
+      })
+      .filter((item): item is GalleryImageItem => item !== null);
+  } catch {
+    return [];
+  }
+}
+
+type Kitsuke = {
+  id: string;
+  kitsukeimage?: MicroCMSImage;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+};
+
+export async function getKitsukeGalleryList(limit = 20): Promise<GalleryImageItem[]> {
+  if (!client) return [];
+  try {
+    const res = await client.getList<Kitsuke>({
+      endpoint: "kitsuke",
+      queries: {
+        limit,
+        orders: "-publishedAt",
+      },
+    });
+    return res.contents
+      .map((item) => {
+        if (!item.kitsukeimage?.url) return null;
+        return {
+          id: item.id,
+          url: item.kitsukeimage.url,
+          alt: "着付け",
+        };
+      })
+      .filter((item): item is GalleryImageItem => item !== null);
+  } catch {
+    return [];
+  }
 }

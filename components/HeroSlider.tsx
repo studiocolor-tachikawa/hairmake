@@ -5,8 +5,27 @@ import Image from "next/image";
 import type { SlideImage } from "@/types";
 
 const placeholderSlides: SlideImage[] = [
-  { id: "1", url: "/mv/mv.png", alt: "メインビジュアル", order: 0, createdAt: new Date() },
-  { id: "2", url: "/mv/mv2.png", alt: "メインビジュアル2", order: 1, createdAt: new Date() },
+  {
+    id: "0",
+    url: "/mv/mv1.webp",
+    alt: "メインビジュアル",
+    order: 0,
+    createdAt: new Date(),
+  },
+  {
+    id: "1",
+    url: "/mv/mv.png",
+    alt: "メインビジュアル1",
+    order: 1,
+    createdAt: new Date(),
+  },
+  {
+    id: "2",
+    url: "/mv/mv2.png",
+    alt: "メインビジュアル2",
+    order: 2,
+    createdAt: new Date(),
+  },
 ];
 
 type Props = {

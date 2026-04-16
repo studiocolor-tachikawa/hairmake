@@ -18,7 +18,9 @@ export default function Footer() {
           {/* Logo & Info */}
           <div>
             <div className="mb-4">
-              <Image src="/logo/logo.png" alt="Studio color" width={120} height={40} className="h-10 w-auto brightness-0 invert" />
+              <Link href="/" aria-label="トップページへ">
+                <Image src="/logo/logo.png" alt="Studio color" width={120} height={40} className="h-10 w-auto brightness-0 invert" />
+              </Link>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
               立川で評判のヘアセットサロン。<br />
@@ -59,8 +61,8 @@ export default function Footer() {
             <h3 className="text-xs tracking-widest text-gray-400 mb-4 uppercase">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/company" className="text-sm text-gray-300 hover:text-white transition-colors">
-                  会社情報
+                <Link href="/sitemap" className="text-sm text-gray-300 hover:text-white transition-colors">
+                  サイトマップ
                 </Link>
               </li>
               <li>

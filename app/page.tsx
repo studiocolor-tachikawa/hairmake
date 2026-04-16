@@ -3,12 +3,18 @@ import HeroSlider from "@/components/HeroSlider";
 import GalleryGrid from "@/components/GalleryGrid";
 import ScrollReveal from "@/components/ScrollReveal";
 import Link from "next/link";
-import { getBlogList } from "@/lib/microcms";
+import {
+  getBlogList,
+  getHairGalleryList,
+  getKitsukeGalleryList,
+} from "@/lib/microcms";
 
 export const revalidate = 60;
 
 export default async function Home() {
   const { contents: posts } = await getBlogList(3);
+  const hairGalleryImages = await getHairGalleryList(12);
+  const kitsukeGalleryImages = await getKitsukeGalleryList(12);
   return (
     <>
       {/* Hero Slider */}
@@ -30,7 +36,9 @@ export default async function Home() {
             ヘアセットをもっと身近に♡
           </p>
           <div className="inline-block border border-black px-8 py-3">
-            <span className="text-sm tracking-widest">ヘアセット　¥3,300〜</span>
+            <span className="text-sm tracking-widest">
+              ヘアセット　¥3,300〜
+            </span>
           </div>
         </section>
       </ScrollReveal>
@@ -46,7 +54,9 @@ export default async function Home() {
             rel="noopener noreferrer"
             className="group inline-flex flex-col items-center gap-2 hover:opacity-70 transition-opacity"
           >
-            <span className="text-sm text-pink-300 tracking-wide">ホットペッパーでもっとお得に♡</span>
+            <span className="text-sm text-pink-300 tracking-wide">
+              ホットペッパーでもっとお得に♡
+            </span>
             <span className="text-xs text-gray-400 underline underline-offset-2">
               ホットペッパービューティーで予約する →
             </span>
@@ -60,7 +70,9 @@ export default async function Home() {
       <section className="bg-gray-50 py-16">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
-            <h2 className="text-xs tracking-widest text-gray-400 mb-12 uppercase text-center">Menu</h2>
+            <h2 className="text-xs tracking-widest text-gray-400 mb-12 uppercase text-center">
+              Menu
+            </h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Hairmake Price */}
@@ -69,14 +81,20 @@ export default async function Home() {
                 href="/hairmake-price"
                 className="group block border border-gray-200 bg-white p-8 hover:border-black transition-colors"
               >
-                <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase">Hairmake</p>
+                <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase">
+                  Hairmake
+                </p>
                 <h3 className="text-lg font-medium mb-3">Price</h3>
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">
-                  ヘアセット・メイク・着付け<br />
-                  ブライダルヘアメイク<br />
-                  立川なら絶対にガンバできます
+                  ヘアセット・メイク・着付け
+                  <br />
+                  ブライダルヘアメイク
+                  <br />
+                  立川なら当店におまかせ！
                 </p>
-                <span className="text-xs tracking-widest group-hover:underline">詳しく見る →</span>
+                <span className="text-xs tracking-widest group-hover:underline">
+                  詳しく見る →
+                </span>
               </Link>
             </ScrollReveal>
 
@@ -86,13 +104,20 @@ export default async function Home() {
                 href="/matsuge-price"
                 className="group block border border-gray-200 bg-white p-8 hover:border-black transition-colors"
               >
-                <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase">Eyelash</p>
+                <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase">
+                  Eyelash
+                </p>
                 <h3 className="text-lg font-medium mb-3">まつげ Price</h3>
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">
-                  まつげエクステ・まつげパーマ<br />
+                  まつげエクステ・まつげパーマ
+                  <br />
+                  まつげのメンテナンスも承ります
+                  <br />
                   各種メニューをご用意しています
                 </p>
-                <span className="text-xs tracking-widest group-hover:underline">詳しく見る →</span>
+                <span className="text-xs tracking-widest group-hover:underline">
+                  詳しく見る →
+                </span>
               </Link>
             </ScrollReveal>
 
@@ -102,13 +127,18 @@ export default async function Home() {
                 href="/school"
                 className="group block border border-gray-200 bg-white p-8 hover:border-black transition-colors"
               >
-                <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase">Hair Set</p>
+                <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase">
+                  Hair Set
+                </p>
                 <h3 className="text-lg font-medium mb-3">School</h3>
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">
-                  東京都立川市でヘアセットの資格が取れる！<br />
+                  東京都立川市でヘアセットの資格が取れる！
+                  <br />
                   ヘアセットの最高資格取り組み中 — OPEN準備中♡
                 </p>
-                <span className="text-xs tracking-widest group-hover:underline">詳しく見る →</span>
+                <span className="text-xs tracking-widest group-hover:underline">
+                  詳しく見る →
+                </span>
               </Link>
             </ScrollReveal>
           </div>
@@ -121,8 +151,8 @@ export default async function Home() {
           <h2 className="text-xs tracking-widest text-gray-400 mb-10 uppercase text-center">
             Catalog &amp; Gallery
           </h2>
-          <GalleryGrid title="Hair" category="hair" />
-          <GalleryGrid title="着付け" category="kitsuke" />
+          <GalleryGrid title="Hair" images={hairGalleryImages} />
+          <GalleryGrid title="着付け" images={kitsukeGalleryImages} />
         </section>
       </ScrollReveal>
 
@@ -131,11 +161,17 @@ export default async function Home() {
       {/* Blog */}
       <section className="max-w-4xl mx-auto px-4 py-16">
         <ScrollReveal>
-          <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase text-center">Blog</p>
-          <h2 className="text-xl font-medium mb-10 tracking-wide text-center">ブログ</h2>
+          <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase text-center">
+            Blog
+          </p>
+          <h2 className="text-xl font-medium mb-10 tracking-wide text-center">
+            ブログ
+          </h2>
         </ScrollReveal>
         {posts.length === 0 ? (
-          <p className="text-sm text-gray-400 text-center mb-10">記事がまだありません</p>
+          <p className="text-sm text-gray-400 text-center mb-10">
+            記事がまだありません
+          </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-10">
             {posts.map((post, i) => (
@@ -172,7 +208,10 @@ export default async function Home() {
         )}
         <ScrollReveal>
           <div className="text-center">
-            <Link href="/blog" className="inline-flex items-center gap-2 border border-black px-8 py-3 text-sm tracking-widest hover:bg-black hover:text-white transition-colors">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 border border-black px-8 py-3 text-sm tracking-widest hover:bg-black hover:text-white transition-colors"
+            >
               もっと見る →
             </Link>
           </div>
@@ -184,13 +223,20 @@ export default async function Home() {
       {/* Shop Info */}
       <ScrollReveal>
         <section className="max-w-3xl mx-auto px-4 py-16">
-          <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase text-center">Shop Info</p>
-          <h2 className="text-xl font-medium mb-12 tracking-wide text-center">店舗情報</h2>
+          <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase text-center">
+            Shop Info
+          </p>
+          <h2 className="text-xl font-medium mb-12 tracking-wide text-center">
+            店舗情報
+          </h2>
           <table className="w-full text-sm">
             <tbody className="divide-y divide-gray-100">
               {[
                 { label: "サロン名", value: "Studio Color（スタジオカラー）" },
-                { label: "Address", value: "東京都立川市錦町2-1-26 Nビルディング401" },
+                {
+                  label: "Address",
+                  value: "東京都立川市錦町2-1-26 Nビルディング401",
+                },
                 { label: "TEL", value: "042-595-8087" },
                 { label: "OPEN", value: "10:00〜23:00" },
                 { label: "定休日", value: "年始のみ" },
