@@ -14,14 +14,14 @@ const placeholderSlides: SlideImage[] = [
   },
   {
     id: "1",
-    url: "/mv/mv.png",
+    url: "/mv/mv3.jpg",
     alt: "メインビジュアル1",
     order: 1,
     createdAt: new Date(),
   },
   {
     id: "2",
-    url: "/mv/mv2.png",
+    url: "/mv/mv4.jpg",
     alt: "メインビジュアル2",
     order: 2,
     createdAt: new Date(),
@@ -44,7 +44,7 @@ export default function HeroSlider({ slides = placeholderSlides }: Props) {
   }, [slides.length]);
 
   return (
-    <div className="relative w-full h-[60vh] sm:h-[80vh] overflow-hidden bg-gray-100">
+    <div className="relative w-full aspect-[4/3] overflow-hidden">
       {slides.map((slide, i) => (
         <div
           key={slide.id}
@@ -54,7 +54,7 @@ export default function HeroSlider({ slides = placeholderSlides }: Props) {
             src={slide.url}
             alt={slide.alt}
             fill
-            className="object-cover"
+            className="object-contain"
             priority={i === 0}
           />
         </div>

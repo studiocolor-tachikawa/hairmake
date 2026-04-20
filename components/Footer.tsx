@@ -4,10 +4,14 @@ import Image from "next/image";
 const siteLinks = [
   { label: "Hairmake Price", href: "/hairmake-price" },
   { label: "まつげ Price", href: "/matsuge-price" },
-  { label: "School", href: "/school" },
+  {
+    label: "School",
+    href: "https://salmon779259.studio.site/",
+    external: true,
+  },
   { label: "BLOG", href: "/blog" },
   { label: "COMPANY", href: "/company" },
-  { label: "お問い合わせ", href: "https://lin.ee/XXXXXXX", external: true },
+  { label: "お問い合わせ", href: "https://lin.ee/RbeH8JC", external: true },
 ];
 
 export default function Footer() {
@@ -19,18 +23,27 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <Link href="/" aria-label="トップページへ">
-                <Image src="/logo/logo.png" alt="Studio color" width={120} height={40} className="h-10 w-auto brightness-0 invert" />
+                <Image
+                  src="/logo/logo.png"
+                  alt="Studio color"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto brightness-0 invert"
+                />
               </Link>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
-              立川で評判のヘアセットサロン。<br />
+              立川で評判のヘアセットサロン。
+              <br />
               ヘアセットをもっと身近に♡
             </p>
           </div>
 
           {/* Site Map */}
           <div>
-            <h3 className="text-xs tracking-widest text-gray-400 mb-4 uppercase">Site Map</h3>
+            <h3 className="text-xs tracking-widest text-gray-400 mb-4 uppercase">
+              Site Map
+            </h3>
             <ul className="space-y-2">
               {siteLinks.map((link) => (
                 <li key={link.href}>
@@ -58,15 +71,23 @@ export default function Footer() {
 
           {/* Policy */}
           <div>
-            <h3 className="text-xs tracking-widest text-gray-400 mb-4 uppercase">Legal</h3>
+            <h3 className="text-xs tracking-widest text-gray-400 mb-4 uppercase">
+              Legal
+            </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/sitemap" className="text-sm text-gray-300 hover:text-white transition-colors">
+                <Link
+                  href="/sitemap"
+                  className="text-sm text-gray-300 hover:text-white transition-colors"
+                >
                   サイトマップ
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-sm text-gray-300 hover:text-white transition-colors">
+                <Link
+                  href="/privacy"
+                  className="text-sm text-gray-300 hover:text-white transition-colors"
+                >
                   プライバシーポリシー
                 </Link>
               </li>
@@ -75,7 +96,9 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-6 text-center">
-          <p className="text-xs text-gray-500">© {new Date().getFullYear()} Studio color. All rights reserved.</p>
+          <p className="text-xs text-gray-500">
+            © {new Date().getFullYear()} Studio color. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

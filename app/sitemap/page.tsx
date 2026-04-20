@@ -3,7 +3,11 @@ import Link from "next/link";
 const siteLinks = [
   { label: "Hairmake Price", href: "/hairmake-price" },
   { label: "まつげ Price", href: "/matsuge-price" },
-  { label: "School", href: "/school" },
+  {
+    label: "School",
+    href: "https://salmon779259.studio.site/",
+    external: true,
+  },
   { label: "BLOG", href: "/blog" },
   { label: "COMPANY", href: "/company" },
   { label: "お問い合わせ", href: "https://lin.ee/XXXXXXX", external: true },

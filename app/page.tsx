@@ -51,7 +51,7 @@ export default async function Home() {
       <ScrollReveal>
         <section className="max-w-2xl mx-auto px-4 py-12 text-center">
           <a
-            href="https://beauty.hotpepper.jp/"
+            href="https://beauty.hotpepper.jp/slnH000411289/?vos=cpahpbprosmaf131118003&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcARSn_RleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAacuiYpahhEixmuS_d-7o6oPbIzO6rpVtU8EKZkUcHZ6S7JvQGYorKhVv0hD4Q_aem_j_7jN8_O6_DVHqZLjUazFA"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex flex-col items-center gap-2 hover:opacity-70 transition-opacity"
@@ -126,7 +126,7 @@ export default async function Home() {
             {/* School */}
             <ScrollReveal delay={0.2} className="sm:col-span-2">
               <Link
-                href="/school"
+                href="https://salmon779259.studio.site/"
                 className="group block border border-gray-200 bg-white p-8 hover:border-black transition-colors"
               >
                 <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase">
@@ -243,9 +243,9 @@ export default async function Home() {
                   label: "Address",
                   value: "東京都立川市錦町2-1-26 Nビルディング401",
                 },
-                { label: "TEL", value: "042-595-8087" },
-                { label: "OPEN", value: "10:00〜23:00" },
-                { label: "定休日", value: "年始のみ" },
+                { label: "TEL", value: "042-595-8124" },
+                { label: "OPEN", value: "10:00〜22:00" },
+                { label: "定休日", value: "年末年始" },
               ].map(({ label, value }) => (
                 <tr key={label}>
                   <th className="py-4 pr-6 text-left text-xs tracking-wider text-gray-400 font-normal w-32 align-top">
