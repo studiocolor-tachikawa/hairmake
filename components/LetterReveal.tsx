@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import type { Variants } from "framer-motion";
 
 type Props = {
   text: string;
@@ -9,7 +10,7 @@ type Props = {
   tag?: "h2" | "p" | "span";
 };
 
-const container = {
+const container: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -18,12 +19,12 @@ const container = {
   },
 };
 
-const letter = {
+const letter: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
+    transition: { duration: 0.4, ease: [0, 0, 0.2, 1] },
   },
 };
 
