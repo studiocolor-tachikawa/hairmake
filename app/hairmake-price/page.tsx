@@ -8,7 +8,7 @@ export default function HairmakePricePage() {
         { name: "和髪", price: "¥4400" },
         { name: "フルメイク", price: "¥4400" },
         { name: "ポイントメイク", price: "¥3300" },
-        { name: "つけまつげ装着", price: "+¥550" },
+        { name: "つけまつげ装着", price: "¥550〜" },
       ],
     },
     {
@@ -32,8 +32,12 @@ export default function HairmakePricePage() {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-20">
-      <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase">Hairmake</p>
-      <h1 className="text-2xl font-medium mb-12 tracking-wide">ヘアメイクプライス</h1>
+      <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase">
+        Hairmake
+      </p>
+      <h1 className="text-2xl font-medium mb-12 tracking-wide">
+        ヘアメイクプライス
+      </h1>
 
       <div className="space-y-12">
         {menus.map((section) => (
@@ -43,9 +47,14 @@ export default function HairmakePricePage() {
             </h2>
             <ul className="space-y-3">
               {section.items.map((item) => (
-                <li key={item.name} className="flex justify-between items-baseline py-2">
+                <li
+                  key={item.name}
+                  className="flex justify-between items-baseline py-2"
+                >
                   <span className="text-sm">{item.name}</span>
-                  <span className="text-sm font-medium tabular-nums">{item.price}</span>
+                  <span className="text-sm font-medium tabular-nums">
+                    {item.price}
+                  </span>
                 </li>
               ))}
             </ul>

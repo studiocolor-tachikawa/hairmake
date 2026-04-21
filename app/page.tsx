@@ -111,11 +111,11 @@ export default async function Home() {
                 </p>
                 <h3 className="text-lg font-medium mb-3">まつげ Price</h3>
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">
-                  まつげエクステ・まつげパーマ
+                  まつげメニューのご提供に向けて
                   <br />
-                  まつげのメンテナンスも承ります
+                  安心してご利用いただける体制を整えるため
                   <br />
-                  各種メニューをご用意しています
+                  現在オープン準備中です。
                 </p>
                 <span className="text-xs tracking-widest group-hover:underline">
                   詳しく見る →
