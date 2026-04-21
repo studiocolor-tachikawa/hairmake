@@ -136,7 +136,7 @@ export default async function Home() {
                 <p className="text-xs text-gray-500 leading-relaxed mb-4">
                   東京都立川市でヘアセットの資格が取れる！
                   <br />
-                  ヘアセットの最高資格取り組み中 — OPEN準備中♡
+                  ヘアセットの最高資格取り組み中
                 </p>
                 <span className="text-xs tracking-widest group-hover:underline">
                   詳しく見る →
