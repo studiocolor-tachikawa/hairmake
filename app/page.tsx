@@ -126,7 +126,7 @@ export default async function Home() {
             {/* School */}
             <ScrollReveal delay={0.2} className="sm:col-span-2">
               <Link
-                href="https://salmon779259.studio.site/"
+                href="https://hairmake-school.studio-color.jp"
                 className="group block border border-gray-200 bg-white p-8 hover:border-black transition-colors"
               >
                 <p className="text-xs tracking-widest text-gray-400 mb-2 uppercase">

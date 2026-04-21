@@ -36,7 +36,7 @@ export default function GalleryGrid({ title, images, fallbackImages = [] }: Prop
             <button
               key={img.id}
               onClick={() => open(img)}
-              className="flex-shrink-0 w-40 h-40 sm:w-48 sm:h-48 relative rounded overflow-hidden bg-gray-100 cursor-pointer"
+              className="flex-shrink-0 w-40 sm:w-48 aspect-[3/4] relative rounded overflow-hidden bg-gray-100 cursor-pointer"
             >
               <Image
                 src={img.url}
@@ -62,7 +62,7 @@ export default function GalleryGrid({ title, images, fallbackImages = [] }: Prop
             }}
           />
           <div
-            className="relative z-10 w-[95%] max-w-3xl aspect-square transition-all ease-[cubic-bezier(0.22,1,0.36,1)]"
+            className="relative z-10 w-[95%] max-w-3xl aspect-[3/4] transition-all ease-[cubic-bezier(0.22,1,0.36,1)]"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "scale(1)" : "scale(0.4)",
