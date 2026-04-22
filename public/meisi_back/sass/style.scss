@@ -1,0 +1,160 @@
+//メディアクエリ
+$pc: 1040px; // PC
+$tab: 992px; // タブレット
+$sp: 768px; // スマホ
+
+//レスポンシブ
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  padding: 0 10px;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: rgb(234, 234, 234);
+  margin: 0 auto;
+  .logo {
+    width: 200px;
+    margin: 30px auto;
+    @include sp {
+      max-width: 150px;
+    }
+  }
+  h1,
+  h2,
+  p {
+    text-align: center;
+    color: rgb(60, 60, 60);
+    @include sp {
+      font-size: 12px;
+    }
+  }
+  h1 {
+    font-size: 50px;
+    color: #47544f;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    @include sp {
+      font-size: 30px;
+    }
+  }
+  p {
+    margin: 5px 0;
+  }
+}
+.title-ja {
+  @include sp {
+    margin-top: 40px;
+  }
+}
+h2 {
+  font-size: 25px;
+  margin: 10px 0;
+  color: #404040;
+  @include sp {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+}
+.black,
+.pink,
+.red,
+.blue,
+.white,
+.green,
+.yellow {
+  background-color: #9f9f9f;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+.black,
+.pink,
+.red,
+.blue,
+.white,
+.green,
+.yellow {
+  margin-top: 200px;
+  @include sp {
+    margin-top: 150px;
+  }
+}
+.red {
+  @include sp {
+    margin-top: 70px;
+  }
+}
+// .black {
+//   margin-top: 60px;
+// }
+img {
+  width: 100%;
+}
+.slick {
+  -ms-touch-action: auto;
+  touch-action: auto;
+}
+.slick-dots {
+  margin-bottom: -5%;
+  @include sp {
+    margin-bottom: -10%;
+  }
+}
+.slick-dots li {
+  background-color: #ccc;
+  border-radius: 100%;
+  @include sp {
+    width: 10px;
+    height: 10px;
+  }
+}
+.slick-dots li.slick-active {
+  background-color: rgb(11, 11, 11);
+}
+.about {
+  max-width: 1000px;
+  width: 100%;
+  margin: 200px auto;
+  text-align: center;
+  @include sp {
+    margin: 120px 0 0 0;
+  }
+  p {
+    color: rgb(203, 27, 27);
+  }
+  ul {
+    display: inline-block;
+    text-align: left;
+    h3 {
+      margin: 30px 0 10px 0;
+      color: #404040;
+      @include sp {
+        margin: 0;
+      }
+    }
+    li {
+      margin: 10px 0;
+      font-size: 14px;
+      line-height: 2rem;
+      @include sp {
+        font-size: 12px;
+      }
+    }
+  }
+}

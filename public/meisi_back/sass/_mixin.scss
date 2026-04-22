@@ -1,0 +1,21 @@
+//メディアクエリ
+$pc: 1040px; // PC
+$tab: 992px; // タブレット
+$sp: 768px; // スマホ
+
+//レスポンシブ
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
