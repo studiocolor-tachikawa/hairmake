@@ -1,0 +1,145 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.phot {
+  padding: 0;
+  line-height: 100%;
+  width: 100%;
+  vertical-align: bottom;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.phot img {
+  display: block;
+  width: 100%;
+}
+
+/* メイン画像 */
+
+.mvarea {
+  position: relative;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.mvtitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.mvback {
+  width: 100%;
+}
+
+.phot img.mvbtn {
+  position: absolute;
+  bottom: 30px;
+  width: 90%;
+  left: 5%;
+}
+
+/* スライド */
+
+.wedding_slide img {
+  width: 100%;
+}
+.wedding_slide {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.basic_area {
+  background-color: #ddd9cf;
+  width: 100%;
+  height: auto;
+}
+
+.basic_white_area {
+  background-color: white;
+  width: calc(100% - 100px);
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+  padding: 80px 20px 20px;
+}
+
+.basic_white_area img {
+  text-align: center;
+  display: inline;
+}
+.title_slide {
+  margin-bottom: 40px;
+}
+
+.info-row {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+}
+
+.info-label {
+  width: 120px;
+  background-color: #f5f5f5;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.info-content {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sns-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.sns-links img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.bottom-line {
+  width: 100%;
+  height: 20px;
+  background-color: #e8e3dc;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 28px;
+    line-height: 1.3;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+html {
+  padding: 0 10px;
+}
